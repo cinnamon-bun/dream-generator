@@ -7,8 +7,8 @@
     "dream": "./cli.js"
   },
   "scripts": {
-    "run": "node index.js",
-    "watch": "onchange -v --initial index.js -- node index.js",
+    "run": "node cli.js",
+    "watch": "onchange -v --initial index.js -- node cli.js 3",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

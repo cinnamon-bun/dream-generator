@@ -20,14 +20,29 @@ and your hand was soft
 
 ---
 
-## To run it
+## Install globally and run from the command line
 
-`npm run run`
+```
+npm install --global dream-generator
 
-or
+dream
 
-`node index.js`
+dream 3    # print out 3 dreams
+```
 
-## To see live changes as you edit the code
+## Use from code
+
+```js
+let makeDream = require('dream-generator');
+
+console.log(makeDream());
+```
+
+## Working on it
+### Run it
+
+`node cli.js`
+
+## See live changes as you edit the code
 
 `npm run watch`
