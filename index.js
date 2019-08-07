@@ -154,7 +154,7 @@ let chooseAndRemove = (arr, item) => {
     if (ii === -1) {
         ii = Math.floor(Math.random() * arr.length);
     }
-    let item = arr[ii];
+    item = arr[ii];
     arr.splice(ii, 1);
     return item;
 }
