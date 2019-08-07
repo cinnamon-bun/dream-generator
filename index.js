@@ -9,14 +9,14 @@ let intro = {
     ],
 };
 let outro = {
-    youWereThere: [
+    andYouWereThere: [
         'and we were there',
         'and you were there',
         'we had just arrived',
         'we had just discovered it',
         'we had been there forever',
     ],
-    youWereHappy: [
+    andYouWereHappy: [
         'and we were happy',
         'and we were safe',
         'and we were peaceful',
@@ -31,6 +31,7 @@ let outro = {
         'and all was calm',
         'and you were singing me a song',
         'and you were smiling at me',
+        'and you were grinning at me',
         'and I was singing you a song',
         'and I was smiling at you',
         'and I was grinning at you',
@@ -171,8 +172,8 @@ let makeDream = () => {
             thing2.thereWasAShip,
             thing1.betweenTheBoxes,
             thing2.sailsBillowing,
-            outro.youWereThere,
-            outro.youWereHappy,
+            outro.andYouWereThere,
+            outro.andYouWereHappy,
         ],
     ];
     let parts = choose(patterns).filter(x => x !== null).map(choose);
