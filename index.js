@@ -142,11 +142,15 @@ let things = {
 };
 
 let choose = (stringOrArray) => {
+    // return a random string from an array.
+    // if the input is already just a string, return it.
     if (typeof stringOrArray === 'string') { return stringOrArray; }
     return stringOrArray[Math.floor(Math.random() * stringOrArray.length)];
 }
-let chooseAndRemove = (arr, name) => {
-    let ii = arr.indexOf(name);
+let chooseAndRemove = (arr, item) => {
+    // choose a random item from the array, remove it, and return the item.
+    // if item is provided (optional), remove and return that specific item if it's there.
+    let ii = arr.indexOf(item);
     if (ii === -1) {
         ii = Math.floor(Math.random() * arr.length);
     }
@@ -155,14 +159,20 @@ let chooseAndRemove = (arr, name) => {
     return item;
 }
 let maybe = (item, chance) => {
+    // return item with a given probability (0 <= chance <= 1), or null otherwise
     if (Math.random() < chance) { return item; }
     return null;
 }
 
 let makeDream = () => {
+    // generate a dream, as a multi-line string
+
+    // get names of things
     let thingNames = Object.keys(things);
+    // get 2 random things
     let thing1 = things[chooseAndRemove(thingNames, '')];
     let thing2 = things[chooseAndRemove(thingNames, '')];
+    // list of patterns for assembling a dream
     let patterns = [
         [
             intro.inMyDream,
@@ -176,7 +186,10 @@ let makeDream = () => {
             outro.andYouWereHappy,
         ],
     ];
-    let parts = choose(patterns).filter(x => x !== null).map(choose);
+    let parts = choose(patterns)  // choose a pattern
+        .filter(x => x !== null)  // remove nulls from the pattern (from maybe()s)
+        .map(choose);             // flatten the list of choices inside the pattern to specific choices
+    // join the list of lines into a single multi-line string
     return parts.join('\n');
 }
 
