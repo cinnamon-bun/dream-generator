@@ -1,7 +1,3 @@
-#!/usr/bin/env node
-
-let log = console.log;
-
 let intro = {
     inMyDream: [
         'in my dream',
@@ -193,10 +189,4 @@ let makeDream = () => {
     return parts.join('\n');
 }
 
-log('================================================');
-log(); log(); log();
-log(makeDream());
-log(); log(); log();
-log(makeDream());
-log(); log(); log();
-log('================================================');
+module.exports = makeDream;

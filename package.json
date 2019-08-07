@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Generate a description of a dream",
   "main": "index.js",
+  "bin": {
+    "dream": "./cli.js"
+  },
   "scripts": {
     "run": "node index.js",
     "watch": "onchange -v --initial index.js -- node index.js",
