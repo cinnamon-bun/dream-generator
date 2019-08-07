@@ -38,23 +38,19 @@ let outro = {
     ],
 };
 let things = {
-    ship: {
-        thereWasAShip: 'there was a sailing ship',
-        sailsBillowing: 'sails billowing',
-        andInsideIt: 'and inside the hold of the ship',
-        betweenTheBoxes: 'surrounded by barrels and brass candlesticks',
+    //   == THING ==
+    strawberry: {
+        thereWasAShip: 'there was a juicy strawberry',
+        sailsBillowing: 'sweet and warm',
+        andInsideIt: 'and holding it up',
+        betweenTheBoxes: 'protecting the strawberry',
     },
-    star: {
-        thereWasAShip: 'there was a star',
-        sailsBillowing: 'shining brightly',
-        andInsideIt: 'and orbiting around it',
-        betweenTheBoxes: 'soaring through the sparkling darkness',
-    },
-    meadow: {
-        thereWasAShip: 'there was a meadow',
-        sailsBillowing: 'flowers dancing in the breeze',
-        andInsideIt: 'and resting gently in the grass',
-        betweenTheBoxes: 'between the flowers',
+    //  == PLACE / THING / CONTAINER ==
+    curtain: {
+        thereWasAShip: 'there was a lush red velvet curtain',
+        sailsBillowing: 'tassels unfurling, about to reveal a mystery',
+        andInsideIt: 'and behind it',
+        betweenTheBoxes: 'emerging into the spotlight',
     },
     beetle: {
         thereWasAShip: 'there was an enormous colorful beetle',
@@ -62,17 +58,11 @@ let things = {
         andInsideIt: 'and on its back',
         betweenTheBoxes: 'atop its glittering wings',
     },
-    strawberry: {
-        thereWasAShip: 'there was a juicy strawberry',
-        sailsBillowing: 'sweet and warm',
-        andInsideIt: 'and holding it up',
-        betweenTheBoxes: 'protecting the strawberry',
-    },
-    lighthouse: {
-        thereWasAShip: 'there was a lighthouse',
-        sailsBillowing: 'holding a spell of stability',
-        andInsideIt: 'and below the cliffs',
-        betweenTheBoxes: 'gazing up at the stripes of the tower',
+    star: {
+        thereWasAShip: 'there was a star',
+        sailsBillowing: 'shining brightly',
+        andInsideIt: 'and orbiting around it',
+        betweenTheBoxes: 'soaring through the sparkling darkness',
     },
     seaglass: {
         thereWasAShip: 'there was a piece of blue-green sea glass',
@@ -80,20 +70,65 @@ let things = {
         andInsideIt: 'and inside the frosted glass',
         betweenTheBoxes: 'safely enclosed',
     },
+    ship: {
+        thereWasAShip: 'there was a sailing ship',
+        sailsBillowing: 'sails billowing',
+        andInsideIt: 'and inside the hold of the ship',
+        betweenTheBoxes: 'surrounded by barrels and brass candlesticks',
+    },
+    bed: {
+        thereWasAShip: 'there was a soft bed',
+        sailsBillowing: 'pillows already fluffed',
+        andInsideIt: 'and resting beneath the quilt',
+        betweenTheBoxes: 'tucked in for the night',
+    },
+    //   == PLACE ==
+    meadow: {
+        thereWasAShip: 'there was a meadow',
+        sailsBillowing: 'flowers dancing in the breeze',
+        andInsideIt: 'and resting gently in the grass',
+        betweenTheBoxes: 'between the flowers',
+    },
+    lighthouse: {
+        thereWasAShip: 'there was a lighthouse',
+        sailsBillowing: 'holding a spell of stability',
+        andInsideIt: 'and below the cliffs',
+        betweenTheBoxes: 'gazing up at the stripes of the tower',
+    },
+
     //   == PLACES ==
     // harbor
     // circus
+    // disneyland
     // mountain
+    // park with a view
+    // alfalfa farm
+    // redwood grove
+    // burning man / festival
+    // snowy forest
+    // cypress beach
+    // cabin
     //   == CONTAINERS / FRAMES ==
     // crystal
     // flower
-    // red velvet curtain
+    // sketchbook / canvas
+    // song
     //   == THINGS ==
     // bread
-    // various animals
+    // snacks: pastries, pies
     // banjo
+    // fancy breakfast
+    //   == CHARACTERS ==
+    // a parade of bugs
+    // various animals
+    // dragon
     // tiger
+    // werewolf
+    // snail
+    // pillbug
     //   == ? ==
+    // the moon
+    // the sky
     // painting
     // carousel
     // campfire
@@ -109,8 +144,11 @@ let choose = (stringOrArray) => {
     if (typeof stringOrArray === 'string') { return stringOrArray; }
     return stringOrArray[Math.floor(Math.random() * stringOrArray.length)];
 }
-let chooseAndRemove = (arr) => {
-    let ii = Math.floor(Math.random() * arr.length);
+let chooseAndRemove = (arr, name) => {
+    let ii = arr.indexOf(name);
+    if (ii === -1) {
+        ii = Math.floor(Math.random() * arr.length);
+    }
     let item = arr[ii];
     arr.splice(ii, 1);
     return item;
@@ -122,8 +160,8 @@ let maybe = (item, chance) => {
 
 let makeDream = () => {
     let thingNames = Object.keys(things);
-    let thing1 = things[chooseAndRemove(thingNames)];
-    let thing2 = things[chooseAndRemove(thingNames)];
+    let thing1 = things[chooseAndRemove(thingNames, '')];
+    let thing2 = things[chooseAndRemove(thingNames, '')];
     let patterns = [
         [
             intro.inMyDream,
