@@ -20,6 +20,12 @@ and your hand was soft
 
 ---
 
+## Demo website
+
+There's a [demo website](https://dream-generator.glitch.me) hosted on Glitch.
+
+The demo website's code is [here](https://github.com/cinnamon-bun/dream-generator-website).
+
 ## Install globally and run from the command line
 
 ```
