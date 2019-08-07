@@ -27,3 +27,7 @@ and your hand was soft
 or
 
 `node index.js`
+
+## To see live changes as you edit the code
+
+`npm run watch`

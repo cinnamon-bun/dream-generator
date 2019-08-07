@@ -10,9 +10,7 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "filigree-text": "^0.1.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "onchange": "^6.0.0"
   }
