@@ -1,0 +1,19 @@
+{
+  "name": "dream-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "run": "node index.js",
+    "watch": "onchange -v --initial index.js -- node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "filigree-text": "^0.1.0"
+  },
+  "devDependencies": {
+    "onchange": "^6.0.0"
+  }
+}
