@@ -1,9 +1,11 @@
+
 let intro = {
     inMyDream: [
         'in my dream',
         'I dreamed',
     ],
 };
+
 let outro = {
     andYouWereThere: [
         'and we were there',
@@ -35,6 +37,35 @@ let outro = {
     ],
 };
 let things = {
+    /*
+    HOW THIS WORKS
+
+    ship: {
+        // there was a thing
+        thereWasAShip: 'there was a sailing ship',
+
+        // what it was doing, in progressive tense
+        sailsBillowing: 'sails billowing',
+
+        // prepositional phrase leading to the next thing
+        andInsideIt: 'and inside the hold of the ship',
+
+        // another object will appear here...
+
+        // and that object is related to this one because it was:
+        betweenTheBoxes: 'surrounded by barrels and brass candlesticks',
+    },
+
+    Each of those strings can actually be an array of strings,
+    and one will be chosen randomly.  For example:
+
+        sailsBillowing: [
+            'sails billowing',
+            'mast creaking',
+            'rocking gently',
+        ]
+    */
+
     //   == THING ==
     strawberry: {
         thereWasAShip: 'there was a juicy strawberry',
@@ -42,7 +73,17 @@ let things = {
         andInsideIt: 'and holding it up',
         betweenTheBoxes: 'protecting the strawberry',
     },
-    //  == PLACE / THING / CONTAINER ==
+    bread: {
+        thereWasAShip: 'there was a loaf of fresh bread',
+        sailsBillowing: 'warm and fragrant',
+        andInsideIt: 'and holding it up',
+        betweenTheBoxes: 'cradling the bread',
+    },
+    // snacks: pastries, pies
+    // banjo
+    // fancy breakfast
+
+    //  == PLACE / THING / CONTAINER / FRAME ==
     curtain: {
         thereWasAShip: 'there was a lush red velvet curtain',
         sailsBillowing: 'tassels unfurling, about to reveal a mystery',
@@ -79,6 +120,11 @@ let things = {
         andInsideIt: 'and resting beneath the quilt',
         betweenTheBoxes: 'tucked in for the night',
     },
+    // crystal
+    // flower
+    // sketchbook / canvas
+    // song
+
     //   == PLACE ==
     meadow: {
         thereWasAShip: 'there was a meadow',
@@ -92,8 +138,12 @@ let things = {
         andInsideIt: 'and below the cliffs',
         betweenTheBoxes: 'gazing up at the stripes of the tower',
     },
-
-    //   == PLACES ==
+    carousel: {
+        thereWasAShip: 'there was a carousel',
+        sailsBillowing: 'lights ablaze, brass shining',
+        andInsideIt: 'and in the center of the carousel',
+        betweenTheBoxes: 'protected by the dancing beasts',
+    },
     // harbor
     // circus
     // disneyland
@@ -105,16 +155,8 @@ let things = {
     // snowy forest
     // cypress beach
     // cabin
-    //   == CONTAINERS / FRAMES ==
-    // crystal
-    // flower
-    // sketchbook / canvas
-    // song
-    //   == THINGS ==
-    // bread
-    // snacks: pastries, pies
-    // banjo
-    // fancy breakfast
+    // gate
+
     //   == CHARACTERS ==
     // a parade of bugs
     // various animals
@@ -123,11 +165,11 @@ let things = {
     // werewolf
     // snail
     // pillbug
+
     //   == ? ==
     // the moon
     // the sky
     // painting
-    // carousel
     // campfire
     // bed
     // memory
@@ -166,7 +208,7 @@ let makeDream = () => {
     // get names of things
     let thingNames = Object.keys(things);
     // get 2 random things
-    let thing1 = things[chooseAndRemove(thingNames, '')];
+    let thing1 = things[chooseAndRemove(thingNames, '')];  // put names here to test specific items
     let thing2 = things[chooseAndRemove(thingNames, '')];
     // list of patterns for assembling a dream
     let patterns = [
